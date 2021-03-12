@@ -1,5 +1,6 @@
 import styled from 'styled-components'
 import WeekdayTitle from './WeekdayTitle'
+import ProgressBar from './ProgressBar'
 
 const StyledSection = styled.div`
     background-color: #ffffff;
@@ -15,12 +16,42 @@ const StyledSection = styled.div`
 `
 
 const Section = () => {
-    const days = ['M', 'T', 'W', 'T', 'F', 'S', 'S']
+    const days = [
+        {
+            name: 'M',
+            progress: '20%'
+        },
+        {
+            name: 'T',
+            progress: '40%'
+        },
+        {
+            name: 'W',
+            progress: '50%'
+        },
+        {
+            name: 'T',
+            progress: '60%'
+        },
+        {
+            name: 'F',
+            progress: '70%'
+        },
+        {
+            name: 'S',
+            progress: '80%'
+        },
+        {
+            name: 'S',
+            progress: '100%'
+        },
+    ]
     return (
         <>
             {days.map((day, key) => (
                 <StyledSection key={key}>
-                    <WeekdayTitle day={day}></WeekdayTitle>
+                    <WeekdayTitle day={day.name} />
+                    <ProgressBar progress={day.progress} />
                 </StyledSection>
             ))}
         </>
