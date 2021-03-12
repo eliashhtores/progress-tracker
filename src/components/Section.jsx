@@ -19,31 +19,38 @@ const Section = () => {
     const days = [
         {
             name: 'M',
-            progress: '20%'
+            progress: '20%',
+            number: 1,
         },
         {
             name: 'T',
-            progress: '40%'
+            progress: '40%',
+            number: 2,
         },
         {
             name: 'W',
-            progress: '50%'
+            progress: '50%',
+            number: 4,
         },
         {
             name: 'T',
-            progress: '60%'
+            progress: '60%',
+            number: 5,
         },
         {
             name: 'F',
-            progress: '70%'
+            progress: '70%',
+            number: 6,
         },
         {
             name: 'S',
-            progress: '80%'
+            progress: '80%',
+            number: 7,
         },
         {
             name: 'S',
-            progress: '100%'
+            progress: '100%',
+            number: 8,
         },
     ]
     return (
@@ -51,7 +58,7 @@ const Section = () => {
             {days.map((day, key) => (
                 <StyledSection key={key}>
                     <WeekdayTitle day={day.name} />
-                    <ProgressBar progress={day.progress} />
+                    <ProgressBar progress={day.progress} number={day.number} />
                 </StyledSection>
             ))}
         </>

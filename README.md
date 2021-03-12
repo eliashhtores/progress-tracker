@@ -1,4 +1,4 @@
-# Projects created to test React styled components
+# Project created to test React styled components
 
 # Getting Started with Create React App
 

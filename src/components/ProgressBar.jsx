@@ -10,17 +10,24 @@ const StyleProgressBar = styled.div`
         else return 'red'
     }};
     height: 50px;
-    width: ${({ progress }) => progress || '0%'}
+    width: ${({ progress }) => progress || '0%'};
+`
+const TodayProgressBar = styled(StyleProgressBar)`
+    background-color: purple;
 `
 
 const ProgressSection = styled.div`
     width: 250px;
 `
 
-const ProgressBar = ({ progress }) => {
+const ProgressBar = ({ progress, number }) => {
+    const dayOfTheWeek = new Date().getDay()
+    const isToday = number === dayOfTheWeek
+
     return (
         <ProgressSection>
-            <StyleProgressBar progress={progress} />
+            {isToday && <TodayProgressBar progress={progress} />}
+            {!isToday && <StyleProgressBar progress={progress} />}
         </ProgressSection>
     )
 }
